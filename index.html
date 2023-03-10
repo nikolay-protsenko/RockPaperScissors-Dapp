@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Rock,Paper,Scissors</title>
+    
+</head>
+
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <div id="ongoingScores">
+        <span id="round"></span><br><br>
+        
+        <span>LAST ROUND:</span><br>
+        <span id="playerChoice"></span><br>
+        <span id="playerChoiceList"></span><br>
+        <span id="computerChoiceList"></span>
+        <span id="computerChoice"></span>
+    </div>
+
+<br>
+    <div id="resultsArea"> Results: </div>
+
+
+    <div class="playerButtons">
+        </br>
+        <button id="rock" onclick='playerClick("rock")'>Rock</button>
+        <button id="paper" onclick='playerClick("paper")'>Paper</button>
+        <button id="scissors" onclick='playerClick("scissors")'>Scissors</button>
+    </div>
+
+    <div class="playerButtons">
+        <button id="playGameBtn" onclick='playGame()'>Play Game</button>
+        <button id="newGameBtn" onclick='newGame()'>Start New Game</button>
+    </div>
+
+    <div id="resultDiv">
+        <p>RESULT: <span id = "resultVal"></p>    
+    </div>
+    
+
+
+
+
+    <script src = "https://cdn.ethers.io/lib/ethers-5.4.umd.min.js" type ="application/javascript"></script>
+    <script src = "./script.js" type ="application/javascript"></script>
+</body>
+
+</html>
