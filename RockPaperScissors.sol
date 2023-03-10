@@ -19,7 +19,7 @@ contract RockPaperScissors{
 
         for (uint i=0; i < payerChoices.length; i++) {
             
-            uint256 _computerSelection = block.timestamp%3+1;
+            uint256 _computerSelection = uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp)))%3+1;
             uint256 _playerSelection = payerChoices[i];
 
             //rock = 1
@@ -48,7 +48,8 @@ contract RockPaperScissors{
         if (_playerWins > _computerWins) {
             _resultWinner = "Winner: Player!";
             emit GamePlayed(msg.sender,  _computerResult, true, _resultWinner);
-            payable(msg.sender).transfer(msg.value*2);
+
+            payable(msg.sender).transfer(msg.value*(_playerWins - _computerWins)*2);
         }else if (_computerWins > _playerWins){ 
             _resultWinner = "Winner: Computer!";
 
